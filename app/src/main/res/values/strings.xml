@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Wunder test assignment</string>
+
+    <string name="carlist">Cars List</string>
+    <string name="carpin">Car Pin</string>
+    <string name="more">More</string>
+    <string name="hello_blank_fragment">hello</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
