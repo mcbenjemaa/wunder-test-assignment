@@ -8,4 +8,20 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Subhead" parent="@style/TextAppearance.AppCompat.Subhead">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Subhead.Black" parent="@style/Subhead" />
+    <style name="Subhead.Black.Hint" parent="@style/Subhead.Black">
+        <item name="android:textColor">@color/txt_color</item>
+    </style>
+    <style name="Subhead.Black.Primary" parent="@style/Subhead.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Subhead.Black.Secondary" parent="@style/Subhead.Black">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
 </resources>

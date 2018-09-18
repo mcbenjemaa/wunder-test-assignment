@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical"
+    android:background="@color/white"
+    android:foreground="?attr/selectableItemBackground" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+
+    xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/layout_opensource_cont">
+    <TextView android:gravity="center_vertical" android:id="@+id/open_source_license_vh_name"  android:text="Open Source Name" android:layout_width="wrap_content" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" style="@style/Subhead.Black.Primary" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="6dp"
+        >
+        <View
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+    </FrameLayout>
+</LinearLayout>
