@@ -3,17 +3,25 @@ package wunder.org.wunder.test.assignment;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.FrameLayout;
 
 import com.eightbitlab.bottomnavigationbar.BottomBarItem;
 import com.eightbitlab.bottomnavigationbar.BottomNavigationBar;
 import com.zuluft.safeFragmentTransaction.SafeFragmentTransaction;
 
+import java.io.IOException;
+
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import wunder.org.wunder.test.assignment.service.CarService;
 import wunder.org.wunder.test.assignment.ui.CarsFragment;
 import wunder.org.wunder.test.assignment.ui.MapFragment;
 import wunder.org.wunder.test.assignment.ui.MoreFragment;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,21 +34,28 @@ public class MainActivity extends AppCompatActivity {
     private SafeFragmentTransaction mSafeFragmentTransaction;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+
         mSafeFragmentTransaction = SafeFragmentTransaction.createInstance(getLifecycle(),
                 getSupportFragmentManager());
         getLifecycle().addObserver(mSafeFragmentTransaction);
+
+
 
 
         setupBottomBar();
 
         addFragment(new CarsFragment(),"Cars");
         bottomBar.selectTab(0,true);
+
+        getLocations(CarService.getInstance(this));
     }
 
 
@@ -101,6 +116,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+    public void getLocations(CarService carService){
+
+        Log.i("cars",carService.getLocations().toString());
+
+    }
+
     private void navigate(int position) {
 
 
@@ -117,6 +139,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+
+    public void selectFragment(Fragment fragment,String tag,int pos)
+    {
+        addFragment(fragment,tag);
+        bottomBar.selectTab(pos,true);
     }
 
 }

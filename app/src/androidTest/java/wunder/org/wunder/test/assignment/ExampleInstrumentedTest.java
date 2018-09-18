@@ -7,6 +7,9 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import wunder.org.wunder.test.assignment.model.Location;
+import wunder.org.wunder.test.assignment.service.CarService;
+
 import static org.junit.Assert.*;
 
 /**
@@ -22,5 +25,19 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("wunder.org.wunder.test.assignment", appContext.getPackageName());
+
+
     }
+
+
+    @Test
+    public void check_JSON_Loaded_Correctly() {
+
+        Context appContext = InstrumentationRegistry.getTargetContext();
+
+        Location location = CarService.getInstance(appContext).getLocations();
+
+        assertNotNull(location);
+    }
+
 }

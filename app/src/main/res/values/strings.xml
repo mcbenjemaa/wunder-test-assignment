@@ -7,4 +7,6 @@
     <string name="hello_blank_fragment">hello</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="google_API_KEY">AIzaSyCPA1stK8Ts9LdeMzUQmM6r0S9pdyW-x40</string>
 </resources>
