@@ -135,7 +135,9 @@ public class MapFragment extends Fragment {
         //Move the Camera to the first Car Pin or to the selected Car in the list
 
         if(car!=null){
-            zoom(car,14);
+            zoom(car,16);
+            hashMap.get(car).showInfoWindow();
+
         }else{
             zoom(cars.get(0),12);
         }
@@ -152,8 +154,7 @@ public class MapFragment extends Fragment {
         CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(zoom).build();
         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
 
-        hashMap.get(car).showInfoWindow();
-
+       
     }
 
     public void addPin(PlacemarksItem car){
@@ -165,6 +166,7 @@ public class MapFragment extends Fragment {
                 .title(car.getName())
                 .snippet(car.getAddress())
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
 
         hashMap.put(car,marker);
 
