@@ -8,14 +8,17 @@ import android.widget.FrameLayout;
 
 import com.eightbitlab.bottomnavigationbar.BottomBarItem;
 import com.eightbitlab.bottomnavigationbar.BottomNavigationBar;
+import com.google.android.gms.maps.model.Marker;
 import com.zuluft.safeFragmentTransaction.SafeFragmentTransaction;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import wunder.org.wunder.test.assignment.model.PlacemarksItem;
 import wunder.org.wunder.test.assignment.service.CarService;
 import wunder.org.wunder.test.assignment.ui.CarsFragment;
 import wunder.org.wunder.test.assignment.ui.MapFragment;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.container)
     FrameLayout container;
+
 
     private SafeFragmentTransaction mSafeFragmentTransaction;
 

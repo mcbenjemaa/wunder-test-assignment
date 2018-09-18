@@ -36,7 +36,7 @@ public class MapFragment extends Fragment {
 
     List<PlacemarksItem> cars;
 
-    HashMap<LatLng, PlacemarksItem> hashMap;
+    HashMap<PlacemarksItem, Marker> hashMap;
 
 
     PlacemarksItem car;
@@ -148,8 +148,11 @@ public class MapFragment extends Fragment {
 
         LatLng latLng=new LatLng(car.getCoordinates().get(0),car.getCoordinates().get(1));
 
+
         CameraPosition cameraPosition = new CameraPosition.Builder().target(latLng).zoom(zoom).build();
         googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+        hashMap.get(car).showInfoWindow();
 
     }
 
@@ -163,7 +166,7 @@ public class MapFragment extends Fragment {
                 .snippet(car.getAddress())
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        hashMap.put(latLng,car);
+        hashMap.put(car,marker);
 
 
     }

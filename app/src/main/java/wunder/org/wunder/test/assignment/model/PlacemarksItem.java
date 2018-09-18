@@ -1,6 +1,8 @@
 package wunder.org.wunder.test.assignment.model;
 
 import java.util.List;
+import java.util.Objects;
+
 import com.google.gson.annotations.SerializedName;
 
 public class PlacemarksItem{
@@ -107,4 +109,19 @@ public class PlacemarksItem{
 			",interior = '" + interior + '\'' + 
 			"}";
 		}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		PlacemarksItem that = (PlacemarksItem) o;
+		return Objects.equals(coordinates, that.coordinates) &&
+				Objects.equals(name, that.name);
+	}
+
+	@Override
+	public int hashCode() {
+
+		return Objects.hash(coordinates, name);
+	}
 }
